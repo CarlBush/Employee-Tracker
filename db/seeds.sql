@@ -13,12 +13,12 @@ INSERT INTO role(id, title, salary, department_id)
     (4, "Chief Accountant", 60000, 3),
     (5, "Accountant", 40000, 3),
     (6, "Sales Rep", 40000, 4),
-    (7, "Traveling Sales Representative", 50000, 4),
+    (7, "Traveling Sales Representative", 50000, 4);
 
 
 INSERT INTO employee(id, first_name, last_name, role_id, manager_id)
     VALUES
-    (1, "Michael", "Scott", 1,),
+    (1, "Michael", "Scott", 1,1),
     (2, "Dwight", "Schrute", 2, 1),
     (3, "Jim", "Halpert", 6, 1),
     (4, "Pam", "Beesly", 6, 1),
@@ -31,6 +31,6 @@ INSERT INTO employee(id, first_name, last_name, role_id, manager_id)
     (11, "Toby", "Flenderson", 3, 3),
     (12, "Danny", "Cordray", 7, 3),
     (13, "Holly", "Flax", 3, 2),
-    (14, "Andy ", "Bernard", 1,);
+    (14, "Andy ", "Bernard", 1,1);
 
 
