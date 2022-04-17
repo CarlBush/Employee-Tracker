@@ -1,8 +1,10 @@
 const inquirer = require("inquirer");
+require('console.table');
 
-const Department = require("./lib/department");
+const { Department , promptAddDepartment, viewDepartment } = require("./lib/department");
 const Role = require("./lib/role");
 const Employee = require("./lib/employee");
+
 
 //FIRST MAIN PROMPT
 const mainPrompt = () => {
@@ -24,12 +26,12 @@ const mainPrompt = () => {
             ]
         },
         //PROMPT "Add Department" | ADD NAME OF DEPARTMENT
-        {
-            type: "input",
-            name: "department",
-            message: "What is the name of the department?",
-            when: (answer) =>answer.mainPrompt ==="Add Department"
-        },
+        // {
+        //     type: "input",
+        //     name: "department",
+        //     message: "What is the name of the department?",
+        //     when: (answer) =>answer.mainPrompt ==="Add Department"
+        // },
         //PROMPT "Add Role" | ADD NAME OF ROLE
         {
             type: "input",
@@ -58,9 +60,16 @@ const mainPrompt = () => {
             message: "What is the employee's last name?",
             when: (answer) =>answer.mainPrompt ==="Add Employee"
         },
-    ])
+    ]).then(responses => {
+        switch(responses.mainPrompt) {
+            case "View All Departments":
+                viewDepartment();
+                break;
+            case "Add Department" :
+                promptAddDepartment();
+                break;
+        };
+    });
 };
-
-
 
 mainPrompt();
