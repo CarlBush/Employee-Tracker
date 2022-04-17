@@ -2,8 +2,8 @@ const inquirer = require("inquirer");
 require('console.table');
 
 const { Department , promptAddDepartment, viewDepartment } = require("./lib/department");
-const Role = require("./lib/role");
-const Employee = require("./lib/employee");
+const { Role, viewRole } = require("./lib/role");
+const { Employee, viewEmployee } = require("./lib/employee");
 
 
 //FIRST MAIN PROMPT
@@ -67,6 +67,12 @@ const mainPrompt = () => {
                 break;
             case "Add Department" :
                 promptAddDepartment();
+                break;
+            case "View All Roles":
+                viewRole();
+                break;
+            case "View All Employees":
+                viewEmployee();
                 break;
         };
     });
