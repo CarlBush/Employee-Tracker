@@ -23,13 +23,41 @@ const mainPrompt = () => {
                 "Quit"
             ]
         },
-        //ADD DEPARTMENT
+        //PROMPT "Add Department" | ADD NAME OF DEPARTMENT
         {
             type: "input",
             name: "department",
             message: "What is the name of the department?",
-            when: (answer) =>answer.mainPrompt ==="View All Departments"
-        }
+            when: (answer) =>answer.mainPrompt ==="Add Department"
+        },
+        //PROMPT "Add Role" | ADD NAME OF ROLE
+        {
+            type: "input",
+            name: "role",
+            message: "What is the name of the role?",
+            when: (answer) =>answer.mainPrompt ==="Add Role"
+        },
+        //PROMPT "Add Role" | ADD SALARY OF ROLE
+        {
+            type: "input",
+            name: "salary",
+            message: "What is the salary of the role?",
+            when: (answer) =>answer.mainPrompt ==="Add Role"
+        },
+        //PROMPT "Add Employee" | ADD FIRST NAME
+        {
+            type: "input",
+            name: "firstname",
+            message: "What is the employee's first name?",
+            when: (answer) =>answer.mainPrompt ==="Add Employee"
+        },
+        //PROMPT "Add Employee" | ADD LAST NAME
+        {
+            type: "input",
+            name: "lastname",
+            message: "What is the employee's last name?",
+            when: (answer) =>answer.mainPrompt ==="Add Employee"
+        },
     ])
 };
 
