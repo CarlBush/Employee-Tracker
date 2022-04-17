@@ -22,10 +22,16 @@ const mainPrompt = () => {
                 "Update Employee Role",
                 "Quit"
             ]
+        },
+        //ADD DEPARTMENT
+        {
+            type: "input",
+            name: "department",
+            message: "What is the name of the department?",
+            when: (answer) =>answer.mainPrompt ==="View All Departments"
         }
     ])
 };
-
 
 
 
