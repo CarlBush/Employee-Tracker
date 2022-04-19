@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 require('console.table');
 
 const { Department , promptAddDepartment, viewDepartment } = require("./lib/department");
-const { Role, viewRole } = require("./lib/role");
+const { Role, viewRole, promptAddRole } = require("./lib/role");
 const { Employee, viewEmployee } = require("./lib/employee");
 
 
@@ -33,19 +33,19 @@ const mainPrompt = () => {
         //     when: (answer) => answer.mainPrompt === "Add Department"
         // },
         //PROMPT "Add Role" | ADD NAME OF ROLE
-        {
-            type: "input",
-            name: "role",
-            message: "What is the name of the role?",
-            when: (answer) => answer.mainPrompt === "Add Role"
-        },
-        //PROMPT "Add Role" | ADD SALARY OF ROLE
-        {
-            type: "input",
-            name: "salary",
-            message: "What is the salary of the role?",
-            when: (answer) => answer.mainPrompt === "Add Role"
-        },
+        // {
+        //     type: "input",
+        //     name: "role",
+        //     message: "What is the name of the role?",
+        //     when: (answer) => answer.mainPrompt === "Add Role"
+        // },
+        // //PROMPT "Add Role" | ADD SALARY OF ROLE
+        // {
+        //     type: "input",
+        //     name: "salary",
+        //     message: "What is the salary of the role?",
+        //     when: (answer) => answer.mainPrompt === "Add Role"
+        // },
         //PROMPT "Add Employee" | ADD FIRST NAME
         {
             type: "input",
@@ -70,6 +70,8 @@ const mainPrompt = () => {
                 return viewRole();
             case "View All Employees":
                 return viewEmployee();
+            case "Add Role":
+                return promptAddRole();
         };
     }).then(() => {
         mainPrompt();
