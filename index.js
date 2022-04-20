@@ -13,17 +13,17 @@ const mainPrompt = () => {
             type: "list",
             name: "mainPrompt",
             message: "What would you like to do?",
-            choices: 
-            [
-                "View All Departments",
-                "View All Roles",
-                "View All Employees",
-                "Add Department",
-                "Add Role",
-                "Add Employee",
-                "Update Employee Role",
-                "Quit"
-            ]
+            choices:
+                [
+                    "View All Departments",
+                    "View All Roles",
+                    "View All Employees",
+                    "Add Department",
+                    "Add Role",
+                    "Add Employee",
+                    "Update Employee Role",
+                    "Quit"
+                ]
         },
         //PROMPT "Add Department" | ADD NAME OF DEPARTMENT
         // {
@@ -61,10 +61,10 @@ const mainPrompt = () => {
             when: (answer) => answer.mainPrompt === "Add Employee"
         },
     ]).then(responses => {
-        switch(responses.mainPrompt) {
+        switch (responses.mainPrompt) {
             case "View All Departments":
                 return viewDepartments().then((res) => {
-                    console.table(res); 
+                    console.table(res);
                 });
             case "View All Roles":
                 return viewRoles().then((res) => {
