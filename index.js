@@ -1,9 +1,9 @@
 const inquirer = require("inquirer");
 require('console.table');
 
-const { Department , promptAddDepartment, viewDepartment } = require("./lib/department");
-const { Role, viewRole, promptAddRole } = require("./lib/role");
-const { Employee, viewEmployee } = require("./lib/employee");
+const { promptAddDepartment, viewDepartments } = require("./lib/department");
+const { viewRoles, promptAddRole } = require("./lib/role");
+const { viewEmployees } = require("./lib/employee");
 
 
 //FIRST MAIN PROMPT
@@ -63,13 +63,19 @@ const mainPrompt = () => {
     ]).then(responses => {
         switch(responses.mainPrompt) {
             case "View All Departments":
-                return viewDepartment();
+                return viewDepartments().then((res) => {
+                    console.table(res); 
+                });
+            case "View All Roles":
+                return viewRoles().then((res) => {
+                    console.table(res)
+                });
+            case "View All Employees":
+                return viewEmployees().then((res) => {
+                    console.table(res)
+                });
             case "Add Department":
                 return promptAddDepartment();
-            case "View All Roles":
-                return viewRole();
-            case "View All Employees":
-                return viewEmployee();
             case "Add Role":
                 return promptAddRole();
         };
