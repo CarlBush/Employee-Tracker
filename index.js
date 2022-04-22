@@ -5,7 +5,6 @@ const { viewDepartments, promptAddDepartment } = require("./lib/department");
 const { viewRoles, promptAddRole } = require("./lib/role");
 const { viewEmployees, promptAddEmployee } = require("./lib/employee");
 
-
 //FIRST MAIN PROMPT
 const mainPrompt = () => {
     return inquirer.prompt([
@@ -25,41 +24,6 @@ const mainPrompt = () => {
                     "Quit"
                 ]
         },
-        //PROMPT "Add Department" | ADD NAME OF DEPARTMENT
-        // {
-        //     type: "input",
-        //     name: "department",
-        //     message: "What is the name of the department?",
-        //     when: (answer) => answer.mainPrompt === "Add Department"
-        // },
-        //PROMPT "Add Role" | ADD NAME OF ROLE
-        // {
-        //     type: "input",
-        //     name: "role",
-        //     message: "What is the name of the role?",
-        //     when: (answer) => answer.mainPrompt === "Add Role"
-        // },
-        // //PROMPT "Add Role" | ADD SALARY OF ROLE
-        // {
-        //     type: "input",
-        //     name: "salary",
-        //     message: "What is the salary of the role?",
-        //     when: (answer) => answer.mainPrompt === "Add Role"
-        // },
-        //PROMPT "Add Employee" | ADD FIRST NAME
-        // {
-        //     type: "input",
-        //     name: "firstname",
-        //     message: "What is the employee's first name?",
-        //     when: (answer) => answer.mainPrompt === "Add Employee"
-        // },
-        //PROMPT "Add Employee" | ADD LAST NAME
-        // {
-        //     type: "input",
-        //     name: "lastname",
-        //     message: "What is the employee's last name?",
-        //     when: (answer) => answer.mainPrompt === "Add Employee"
-        // },
     ]).then(responses => {
         switch (responses.mainPrompt) {
             case "View All Departments":
@@ -80,6 +44,8 @@ const mainPrompt = () => {
                 return promptAddRole();
             case "Add Employee":
                 return promptAddEmployee();
+            case "Quit":
+                return process.exit();
         };
     }).then(() => {
         mainPrompt();
