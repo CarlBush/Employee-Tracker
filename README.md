@@ -44,7 +44,7 @@ Command-Line Prompt that will prompt a series of questions below that will retai
 
 <p align="center"><kbd><img src=https://github.com/CarlBush/Employee-Tracker/blob/main/media/screenshot_terminal.png/></kbd></p>
 
-<strong><p align="center"><a href="https://drive.google.com/file/d/1AUnm2pf7-vwACrq2q8KzeVp0RQvuSAL6/view/">Walkthrough Video</a></p></strong>
+<strong><p align="center"><a href="https://drive.google.com/file/d/1AUnm2pf7-vwACrq2q8KzeVp0RQvuSAL6/view">Walkthrough Video</a></p></strong>
 
 <p align="center"><kbd><img src=https://github.com/CarlBush/Employee-Tracker/blob/main/media/Employee_Tracker_GIF.gif/></kbd></p>
 
