@@ -3,7 +3,7 @@ require('console.table');
 
 const { viewDepartments, promptAddDepartment } = require("./lib/department");
 const { viewRoles, promptAddRole } = require("./lib/role");
-const { viewEmployees, promptAddEmployee } = require("./lib/employee");
+const { viewEmployees, promptAddEmployee, updateEmployeeRole } = require("./lib/employee");
 
 //FIRST MAIN PROMPT
 const mainPrompt = () => {
@@ -44,6 +44,8 @@ const mainPrompt = () => {
                 return promptAddRole();
             case "Add Employee":
                 return promptAddEmployee();
+            case "Update Employee Role":
+                return updateEmployeeRole();
             case "Quit":
                 return process.exit();
         };
